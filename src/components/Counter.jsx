@@ -1,13 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Counter = () => {
+  const [count, counterFunction] = useState(0);
   return (
     <div className="counter">
       <h>Counter 1</h>
       <hr></hr>
-      <p>{/*카운트한 숫자가 들어가요*/}</p>
-      <button>-1</button>
-      <button>+1</button>
+      <p>{count}</p>
+      <button onClick={() => counterFunction(count - 1)}>-1</button>
+      <button onClick={() => counterFunction(count + 1)}>+1</button>
     </div>
   )
 }
